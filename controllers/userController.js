@@ -34,7 +34,6 @@ const getUserByEmail = async (req, res) => {
       .json({ message: "Error fetching user", error: error.message });
   }
 };
-
 module.exports = {
   saveUserToDB,
   getUserByEmail,
