@@ -4,8 +4,9 @@ const {
   saveUserToDB,
   getUserByEmail,
 } = require("../controllers/userController");
+const verifyFirebaseToken = require("../middlewares/verifyFirebaseToken");
 
 router.post("/", saveUserToDB);
-router.get("/", getUserByEmail);
+router.get("/", verifyFirebaseToken, getUserByEmail);
 
 module.exports = router;
