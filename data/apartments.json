@@ -1,0 +1,212 @@
+[
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=1",
+    "floor": 6,
+    "block": "A",
+    "apartmentNo": "A-601",
+    "rent": 24634
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=2",
+    "floor": 8,
+    "block": "D",
+    "apartmentNo": "D-802",
+    "rent": 22289
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=3",
+    "floor": 1,
+    "block": "D",
+    "apartmentNo": "D-103",
+    "rent": 8536
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=4",
+    "floor": 7,
+    "block": "C",
+    "apartmentNo": "C-704",
+    "rent": 4331
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=5",
+    "floor": 10,
+    "block": "C",
+    "apartmentNo": "C-1005",
+    "rent": 20773
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=6",
+    "floor": 6,
+    "block": "C",
+    "apartmentNo": "C-606",
+    "rent": 6879
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=7",
+    "floor": 3,
+    "block": "C",
+    "apartmentNo": "C-307",
+    "rent": 1814
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=8",
+    "floor": 6,
+    "block": "D",
+    "apartmentNo": "D-608",
+    "rent": 19044
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=9",
+    "floor": 2,
+    "block": "A",
+    "apartmentNo": "A-209",
+    "rent": 23658
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=10",
+    "floor": 1,
+    "block": "D",
+    "apartmentNo": "D-100",
+    "rent": 24715
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=11",
+    "floor": 1,
+    "block": "C",
+    "apartmentNo": "C-101",
+    "rent": 17914
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=12",
+    "floor": 3,
+    "block": "D",
+    "apartmentNo": "D-302",
+    "rent": 23551
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=13",
+    "floor": 7,
+    "block": "D",
+    "apartmentNo": "D-703",
+    "rent": 2639
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=14",
+    "floor": 9,
+    "block": "D",
+    "apartmentNo": "D-904",
+    "rent": 23107
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=15",
+    "floor": 6,
+    "block": "A",
+    "apartmentNo": "A-605",
+    "rent": 21249
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=16",
+    "floor": 7,
+    "block": "C",
+    "apartmentNo": "C-706",
+    "rent": 17665
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=17",
+    "floor": 4,
+    "block": "D",
+    "apartmentNo": "D-407",
+    "rent": 7145
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=18",
+    "floor": 10,
+    "block": "B",
+    "apartmentNo": "B-1008",
+    "rent": 8090
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=19",
+    "floor": 3,
+    "block": "A",
+    "apartmentNo": "A-309",
+    "rent": 19031
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=20",
+    "floor": 4,
+    "block": "D",
+    "apartmentNo": "D-400",
+    "rent": 12783
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=21",
+    "floor": 4,
+    "block": "B",
+    "apartmentNo": "B-401",
+    "rent": 15360
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=22",
+    "floor": 5,
+    "block": "C",
+    "apartmentNo": "C-502",
+    "rent": 6614
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=23",
+    "floor": 3,
+    "block": "C",
+    "apartmentNo": "C-303",
+    "rent": 23898
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=24",
+    "floor": 2,
+    "block": "A",
+    "apartmentNo": "A-204",
+    "rent": 16740
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=25",
+    "floor": 1,
+    "block": "D",
+    "apartmentNo": "D-105",
+    "rent": 16991
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=26",
+    "floor": 5,
+    "block": "B",
+    "apartmentNo": "B-506",
+    "rent": 16393
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=27",
+    "floor": 8,
+    "block": "A",
+    "apartmentNo": "A-807",
+    "rent": 17028
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=28",
+    "floor": 4,
+    "block": "B",
+    "apartmentNo": "B-408",
+    "rent": 7548
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=29",
+    "floor": 5,
+    "block": "A",
+    "apartmentNo": "A-509",
+    "rent": 19558
+  },
+  {
+    "image": "https://source.unsplash.com/640x480/?apartment,building&sig=30",
+    "floor": 9,
+    "block": "B",
+    "apartmentNo": "B-900",
+    "rent": 1526
+  }
+]
