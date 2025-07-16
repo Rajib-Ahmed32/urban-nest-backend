@@ -49,7 +49,27 @@ const getUserAgreement = async (req, res) => {
   }
 };
 
+const getAcceptedAgreement = async (req, res) => {
+  try {
+    const userEmail = req.user.email;
+
+    const agreement = await Agreement.findOne({
+      userEmail,
+      status: "accepted",
+    });
+
+    if (!agreement) {
+      return res.status(404).json({ message: "No accepted agreement found" });
+    }
+
+    res.json(agreement);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching agreement", error });
+  }
+};
+
 module.exports = {
   createAgreement,
   getUserAgreement,
+  getAcceptedAgreement,
 };

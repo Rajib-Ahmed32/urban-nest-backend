@@ -3,6 +3,7 @@ const router = express.Router();
 const {
   createAgreement,
   getUserAgreement,
+  getAcceptedAgreement,
 } = require("../controllers/agreementController");
 
 const verifyFirebaseToken = require("../middlewares/verifyFirebaseToken");
@@ -14,6 +15,14 @@ router.post(
   requireRole("user"),
   createAgreement
 );
+
+router.get(
+  "/user/accepted",
+  verifyFirebaseToken,
+  requireRole("member"),
+  getAcceptedAgreement
+);
+
 router.get("/mine", verifyFirebaseToken, requireRole("user"), getUserAgreement);
 
 module.exports = router;
