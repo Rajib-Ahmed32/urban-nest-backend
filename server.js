@@ -5,6 +5,7 @@ require("dotenv").config();
 const userRoutes = require("./routes/userRoutes");
 const agreementRoutes = require("./routes/agreementRoutes");
 const apartmentRoutes = require("./routes/apartmentRoutes");
+const paymentRoutes = require("./routes/paymentRoutes");
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use("/api/users", userRoutes);
 app.use("/api/apartments", apartmentRoutes);
 app.use("/api/agreements", agreementRoutes);
+app.use("/api/payment", paymentRoutes);
 mongoose
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
