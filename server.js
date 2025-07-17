@@ -6,6 +6,7 @@ const userRoutes = require("./routes/userRoutes");
 const agreementRoutes = require("./routes/agreementRoutes");
 const apartmentRoutes = require("./routes/apartmentRoutes");
 const paymentRoutes = require("./routes/paymentRoutes");
+const couponRoutes = require("./routes/couponRoutes");
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -15,6 +16,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/apartments", apartmentRoutes);
 app.use("/api/agreements", agreementRoutes);
 app.use("/api/payment", paymentRoutes);
+app.use("/api/coupons", couponRoutes);
 mongoose
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
