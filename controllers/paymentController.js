@@ -63,3 +63,23 @@ exports.savePaymentInfo = async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 };
+
+exports.getPaymentHistory = async (req, res) => {
+  try {
+    const userEmail = req.user.email;
+    if (!userEmail) {
+      return res
+        .status(401)
+        .json({ message: "Unauthorized: no user email found." });
+    }
+
+    const payments = await Payment.find({ userEmail }).sort({ date: -1 });
+
+    return res.status(200).json(payments);
+  } catch (error) {
+    console.error("Error fetching payment history:", error);
+    return res
+      .status(500)
+      .json({ message: "Server error while fetching payments." });
+  }
+};

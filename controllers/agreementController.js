@@ -68,8 +68,35 @@ const getAcceptedAgreement = async (req, res) => {
   }
 };
 
+const getApartmentOverview = async (req, res) => {
+  try {
+    const totalApartments = 30;
+    const acceptedCount = await Agreement.countDocuments({
+      status: "accepted",
+    });
+
+    const availableApartments = totalApartments - acceptedCount;
+    const unavailableApartments = acceptedCount;
+
+    res.json({
+      totalApartments,
+      availableApartments,
+      unavailableApartments,
+      availablePercentage: Math.round(
+        (availableApartments / totalApartments) * 100
+      ),
+      unavailablePercentage: Math.round(
+        (unavailableApartments / totalApartments) * 100
+      ),
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Failed to fetch admin overview", error });
+  }
+};
+
 module.exports = {
   createAgreement,
   getUserAgreement,
   getAcceptedAgreement,
+  getApartmentOverview,
 };

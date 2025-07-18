@@ -4,6 +4,7 @@ const {
   createAgreement,
   getUserAgreement,
   getAcceptedAgreement,
+  getApartmentOverview,
 } = require("../controllers/agreementController");
 
 const verifyFirebaseToken = require("../middlewares/verifyFirebaseToken");
@@ -24,5 +25,7 @@ router.get(
 );
 
 router.get("/mine", verifyFirebaseToken, requireRole("user"), getUserAgreement);
+
+router.get("/apartment/overview", verifyFirebaseToken, getApartmentOverview);
 
 module.exports = router;

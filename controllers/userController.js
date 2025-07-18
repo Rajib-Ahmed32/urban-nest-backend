@@ -34,7 +34,29 @@ const getUserByEmail = async (req, res) => {
       .json({ message: "Error fetching user", error: error.message });
   }
 };
+
+const getUserStats = async (req, res) => {
+  try {
+    const allUsers = await User.find();
+
+    // Filter roles
+    const memberCount = allUsers.filter((u) => u.role === "member").length;
+    const userCount = allUsers.filter((u) => u.role === "user").length;
+
+    res.status(200).json({
+      totalMembers: memberCount,
+      totalUsers: userCount,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Error counting users and members",
+      error: error.message,
+    });
+  }
+};
+
 module.exports = {
   saveUserToDB,
   getUserByEmail,
+  getUserStats,
 };
