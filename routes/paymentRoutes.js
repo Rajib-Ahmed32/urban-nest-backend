@@ -9,4 +9,10 @@ router.post("/save", verifyFirebaseToken, paymentController.savePaymentInfo);
 
 router.get("/user", verifyFirebaseToken, paymentController.getPaymentHistory);
 
+router.delete(
+  "/user/:userEmail",
+  verifyFirebaseToken,
+  paymentController.deletePaymentsByUserEmail
+);
+
 module.exports = router;

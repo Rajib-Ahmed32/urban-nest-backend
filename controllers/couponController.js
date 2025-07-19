@@ -44,7 +44,39 @@ const validateCoupon = async (req, res) => {
   }
 };
 
+const updateCouponAvailability = async (req, res) => {
+  try {
+    const { available } = req.body;
+
+    const updated = await Coupon.findByIdAndUpdate(
+      req.params.id,
+      { available },
+      { new: true }
+    );
+
+    if (!updated) {
+      return res.status(404).json({ message: "Coupon not found" });
+    }
+
+    res.json({ message: "Availability updated", coupon: updated });
+  } catch (error) {
+    console.error("Coupon update error:", error);
+    res.status(500).json({ message: "Failed to update availability" });
+  }
+};
+
+const getAllCoupons = async (req, res) => {
+  try {
+    const coupons = await Coupon.find({});
+    res.status(200).json(coupons);
+  } catch (error) {
+    res.status(500).json({ message: "Failed to fetch coupons", error });
+  }
+};
+
 module.exports = {
   createCoupon,
   validateCoupon,
+  updateCouponAvailability,
+  getAllCoupons,
 };

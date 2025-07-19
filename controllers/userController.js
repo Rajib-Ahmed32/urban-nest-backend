@@ -38,8 +38,6 @@ const getUserByEmail = async (req, res) => {
 const getUserStats = async (req, res) => {
   try {
     const allUsers = await User.find();
-
-    // Filter roles
     const memberCount = allUsers.filter((u) => u.role === "member").length;
     const userCount = allUsers.filter((u) => u.role === "user").length;
 

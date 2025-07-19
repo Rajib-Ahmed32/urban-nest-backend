@@ -83,3 +83,25 @@ exports.getPaymentHistory = async (req, res) => {
       .json({ message: "Server error while fetching payments." });
   }
 };
+
+exports.deletePaymentsByUserEmail = async (req, res) => {
+  try {
+    const { userEmail } = req.params;
+
+    const result = await Payment.deleteMany({ userEmail });
+
+    if (result.deletedCount === 0) {
+      return res
+        .status(404)
+        .json({ message: "No payment records found for this user" });
+    }
+
+    res.json({
+      message: "Payments deleted successfully",
+      deletedCount: result.deletedCount,
+    });
+  } catch (error) {
+    console.error("Delete payments error:", error);
+    res.status(500).json({ message: "Failed to delete payments" });
+  }
+};
