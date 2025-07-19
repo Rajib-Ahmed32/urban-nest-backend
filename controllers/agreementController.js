@@ -1,5 +1,6 @@
 const Apartment = require("../models/Apartment");
 const Agreement = require("../models/Agreement");
+const User = require("../models/User");
 
 const createAgreement = async (req, res) => {
   const user = req.user;
@@ -94,9 +95,60 @@ const getApartmentOverview = async (req, res) => {
   }
 };
 
+const getPendingAgreements = async (req, res) => {
+  try {
+    const pendingAgreements = await Agreement.find({ status: "pending" });
+    res.status(200).json(pendingAgreements);
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "Failed to fetch pending agreements", error });
+  }
+};
+
+const handleAgreementRequest = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { action } = req.body;
+    if (!["accept", "reject"].includes(action)) {
+      return res.status(400).json({ message: "Invalid action" });
+    }
+    const agreement = await Agreement.findById(id);
+    if (!agreement) {
+      return res.status(404).json({ message: "Agreement not found" });
+    }
+
+    if (agreement.status !== "pending") {
+      return res.status(400).json({ message: "Agreement already handled" });
+    }
+
+    agreement.status = action === "accept" ? "accepted" : "rejected";
+    await agreement.save();
+
+    if (action === "accept") {
+      const user = await User.findOne({ email: agreement.userEmail });
+      if (!user) {
+        return res.status(404).json({ message: "User not found" });
+      }
+
+      user.role = "member";
+      await user.save();
+    }
+
+    res
+      .status(200)
+      .json({ message: `Agreement ${action}ed successfully`, agreement });
+  } catch (error) {
+    console.error("Error in handleAgreementRequest:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
 module.exports = {
   createAgreement,
   getUserAgreement,
   getAcceptedAgreement,
   getApartmentOverview,
+  getPendingAgreements,
+  handleAgreementRequest,
 };

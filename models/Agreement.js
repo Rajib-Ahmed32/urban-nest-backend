@@ -9,7 +9,7 @@ const agreementSchema = new mongoose.Schema({
   rent: { type: Number, required: true },
   status: {
     type: String,
-    enum: ["pending", "approved", "rejected"],
+    enum: ["pending", "accepted", "rejected"],
     default: "pending",
   },
   createdAt: {

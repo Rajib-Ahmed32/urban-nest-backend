@@ -5,6 +5,8 @@ const {
   getUserAgreement,
   getAcceptedAgreement,
   getApartmentOverview,
+  getPendingAgreements,
+  handleAgreementRequest,
 } = require("../controllers/agreementController");
 
 const verifyFirebaseToken = require("../middlewares/verifyFirebaseToken");
@@ -27,5 +29,19 @@ router.get(
 router.get("/mine", verifyFirebaseToken, requireRole("user"), getUserAgreement);
 
 router.get("/apartment/overview", verifyFirebaseToken, getApartmentOverview);
+
+router.get(
+  "/pending",
+  verifyFirebaseToken,
+  requireRole("admin"),
+  getPendingAgreements
+);
+
+router.patch(
+  "/:id/handle",
+  verifyFirebaseToken,
+  requireRole("admin"),
+  handleAgreementRequest
+);
 
 module.exports = router;
