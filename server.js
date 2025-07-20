@@ -9,8 +9,10 @@ const paymentRoutes = require("./routes/paymentRoutes");
 const couponRoutes = require("./routes/couponRoutes");
 const manageMembersRoutes = require("./routes/manageMembers.routes");
 const announcementRoutes = require("./routes/announcement.routes");
+const noticeRoutes = require("./routes/noticeRoutes");
 const app = express();
 const port = process.env.PORT || 5000;
+require("./cron");
 
 app.use(cors());
 app.use(express.json());
@@ -21,6 +23,7 @@ app.use("/api/payment", paymentRoutes);
 app.use("/api/coupons", couponRoutes);
 app.use("/api", manageMembersRoutes);
 app.use("/api/announcements", announcementRoutes);
+app.use("/api/notices", noticeRoutes);
 
 mongoose
   .connect(process.env.MONGODB_URI, {

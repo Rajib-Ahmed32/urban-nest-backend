@@ -12,6 +12,23 @@ const agreementSchema = new mongoose.Schema({
     enum: ["pending", "accepted", "rejected"],
     default: "pending",
   },
+  noticeCount: {
+    type: Number,
+    default: 0,
+  },
+  lastNoticeMonth: {
+    type: String,
+  },
+  noticeHistory: {
+    type: [
+      {
+        month: String,
+        noticeNumber: Number,
+        date: { type: Date, default: Date.now },
+      },
+    ],
+    default: [],
+  },
   createdAt: {
     type: Date,
     default: Date.now,
