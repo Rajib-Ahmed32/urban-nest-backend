@@ -74,9 +74,24 @@ const getAllCoupons = async (req, res) => {
   }
 };
 
+const getPublicCoupons = async (req, res) => {
+  try {
+    const coupons = await Coupon.find(
+      { available: true },
+      "code percentage description"
+    );
+
+    res.status(200).json(coupons);
+  } catch (error) {
+    console.error("Error fetching public coupons:", error);
+    res.status(500).json({ message: "Failed to fetch public coupons" });
+  }
+};
+
 module.exports = {
   createCoupon,
   validateCoupon,
   updateCouponAvailability,
   getAllCoupons,
+  getPublicCoupons,
 };
